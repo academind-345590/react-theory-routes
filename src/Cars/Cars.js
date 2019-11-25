@@ -33,7 +33,6 @@ export default class Cars extends Component {
               key={index}
               name={car.name}
               year={car.year}
-              {...this.props}
             />
           )
         })}
