@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
-import { Route, NavLink } from 'react-router-dom'
+import { Route, NavLink, Switch } from 'react-router-dom'
 import './App.scss'
 import About from './About/About'
 import Cars from './Cars/Cars'
+import CarDatail from './CarDatail/CarDatail'
 
 class App extends Component {
   render() {
@@ -37,9 +38,12 @@ class App extends Component {
         </nav>
 
         <hr/>
-        <Route path="/" exact render = {() => <h1>Home Page</h1>} />
-        <Route path="/about" component = {About} />
-        <Route path="/cars" component = {Cars} />        
+        <Switch>
+          <Route path="/" exact render = {() => <h1>Home Page</h1>} />
+          <Route path="/about" component = {About} />
+          <Route path="/cars/:name" component={CarDatail} />
+          <Route path="/cars" component = {Cars} />              
+        </Switch>  
       </div>
     );
   }
